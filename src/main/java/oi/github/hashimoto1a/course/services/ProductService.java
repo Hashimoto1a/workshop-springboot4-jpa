@@ -7,22 +7,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import oi.github.hashimoto1a.course.entities.User;
-import oi.github.hashimoto1a.course.repositories.UserRepository;
+import oi.github.hashimoto1a.course.entities.Product;
+import oi.github.hashimoto1a.course.repositories.ProductRepository;
 
 @Service
-public class UserService {
+public class ProductService {
 
 	@Autowired
-	private UserRepository repository;
+	private ProductRepository repository;
 	
-	public List<User> findAll(){
+	public List<Product> findAll(){
 		return repository.findAll();
 	}
 	
 	@GetMapping
-	public User findById(Long id) {
-		Optional<User> obj = repository.findById(id);
+	public Product findById(Long id) {
+		Optional<Product> obj = repository.findById(id);
 		return obj.get();
 	}
 	
